@@ -4,18 +4,21 @@ const onload = () => {
   const room = urlParams.get('room');
   console.log('this is the room', room)
 
-  // const socketUrl = 'http://localhost:3000'
-  const socketUrl = 'https://mysterious-retreat-79971.herokuapp.com/'
+  const socketUrl = 'http://localhost:3000' //Desenvolvimento
+  // const socketUrl = 'https://mysterious-retreat-17997.herokuapp.com/' //Produção Heroku
 
   const socketBuilder = new SocketBuilder({ socketUrl })
   
   const peerConfig = Object.values({
     id: undefined,
     config:{
-      host: 'sheltered-hollows-38920.herokuapp.com',
-      secure: true,
-      // port: 9000,
-      // host: 'localhost',
+      //Produção Heroku
+      // host: 'sheltered-hollows-38920.herokuapp.com',
+      // secure: true,
+      
+      //Desenvolvimento
+      port: 9000,
+      host: 'localhost',
       path: '/'
     }
   })
